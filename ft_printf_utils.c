@@ -75,14 +75,3 @@ int	ft_putnbru(unsigned int n)
 	}
 	return (result);
 }
-
-int	ft_iszero(unsigned long zero)
-{
-	int	result;
-
-	if (zero == 0)
-		result = ft_putchar('0');
-	else
-		result = ft_putstr("80000000");
-	return (result);
-}

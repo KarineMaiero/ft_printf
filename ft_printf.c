@@ -57,11 +57,3 @@ int	ft_printf(const char *format, ...)
 	va_end(args);
 	return (result);
 }
-
-// #include <stdio.h>
-// int	main()
-// {
-// 	printf("esse é o printf de verdade\n");
-// 	ft_printf("esse é o novo printf\n");
-// 	return (0);
-// }

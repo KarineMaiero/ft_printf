@@ -12,59 +12,59 @@
 
 #include "ft_printf.h"
 
-int	ft_dexs(unsigned long decimalnum, int i, int j)
+int	ft_dexs(unsigned long decimal, int i, int j)
 {
-	unsigned long	quotient;
-	unsigned long	remainder;
-	char			*hexadecimalnum;
+	unsigned long	result;
+	unsigned long	rest;
+	char			*hexa;
 
-	quotient = decimalnum;
-	if (decimalnum == 0)
-		return (ft_iszero(decimalnum));
-	while (decimalnum != 0 && i++ > -1)
-		decimalnum = decimalnum / 16;
-	hexadecimalnum = malloc(sizeof(char) * i + 1);
-	hexadecimalnum[i--] = '\0';
-	while (quotient != 0)
+	result = decimal;
+	if (decimal == 0)
+		return (ft_putchar('0'));
+	while (decimal != 0 && i++ > -1)
+		decimal = decimal / 16;
+	hexa = malloc(sizeof(char) * i + 1);
+	hexa[i--] = '\0';
+	while (result != 0)
 	{
-		remainder = quotient % 16;
-		if (remainder < 10)
-			hexadecimalnum[i] = (48 + remainder);
+		rest = result % 16;
+		if (rest < 10)
+			hexa[i] = (48 + rest);
 		else
-			hexadecimalnum[i] = (87 + remainder);
-		quotient = quotient / 16;
+			hexa[i] = (87 + rest);
+		result = result / 16;
 		i--;
 	}
-	j = ft_putstr(hexadecimalnum);
-	free(hexadecimalnum);
+	j = ft_putstr(hexa);
+	free(hexa);
 	return (j);
 }
 
-int	ft_dex(unsigned long decimalnum, int i, int j)
+int	ft_dex(unsigned long decimal, int i, int j)
 {
-	unsigned long	quotient;
-	unsigned long	remainder;
-	char			*hexadecimalnum;
+	unsigned long	result;
+	unsigned long	rest;
+	char			*hexa;
 
-	quotient = decimalnum;
-	if (decimalnum == 0)
-		return (ft_iszero(decimalnum));
-	while (decimalnum != 0 && i++ > -1)
-		decimalnum = decimalnum / 16;
-	hexadecimalnum = malloc(sizeof(char) * i + 1);
-	hexadecimalnum[i--] = '\0';
-	while (quotient != 0)
+	result = decimal;
+	if (decimal == 0)
+		return (ft_putchar('0'));
+	while (decimal != 0 && i++ > -1)
+		decimal = decimal / 16;
+	hexa = malloc(sizeof(char) * i + 1);
+	hexa[i--] = '\0';
+	while (result != 0)
 	{
-		remainder = quotient % 16;
-		if (remainder < 10)
-			hexadecimalnum[i] = (48 + remainder);
+		rest = result % 16;
+		if (rest < 10)
+			hexa[i] = (48 + rest);
 		else
-			hexadecimalnum[i] = (55 + remainder);
-		quotient = quotient / 16;
+			hexa[i] = (55 + rest);
+		result = result / 16;
 		i--;
 	}
-	j = ft_putstr(hexadecimalnum);
-	free(hexadecimalnum);
+	j = ft_putstr(hexa);
+	free(hexa);
 	return (j);
 }
 
