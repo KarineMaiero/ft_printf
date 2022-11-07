@@ -6,14 +6,11 @@
 /*   By: kmaiero <kmaiero@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 23:47:12 by kmaiero           #+#    #+#             */
-/*   Updated: 2022/11/04 22:05:24 by kmaiero          ###   ########.fr       */
+/*   Updated: 2022/11/07 17:11:51 by kmaiero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-#include <stdarg.h>
-#include <unistd.h>
 
 int	ft_scan(char format, va_list args)
 {
@@ -26,9 +23,9 @@ int	ft_scan(char format, va_list args)
 	else if (format == 'u')
 		return (ft_putnbru(va_arg(args, unsigned int)));
 	else if (format == 'X')
-		return (ft_dex(va_arg(args, unsigned int), 0, 0));
+		return (ft_hexcaps(va_arg(args, unsigned int), 0, 0));
 	else if (format == 'x')
-		return (ft_dexs(va_arg(args, unsigned int), 0, 0));
+		return (ft_hexsmall(va_arg(args, unsigned int), 0, 0));
 	else if (format == 'p')
 		return (ft_pointer(va_arg(args, unsigned long)));
 	else

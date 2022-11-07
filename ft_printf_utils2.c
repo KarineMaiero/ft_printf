@@ -6,13 +6,13 @@
 /*   By: kmaiero <kmaiero@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 00:45:50 by kmaiero           #+#    #+#             */
-/*   Updated: 2022/11/04 21:56:13 by kmaiero          ###   ########.fr       */
+/*   Updated: 2022/11/07 17:15:10 by kmaiero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_dexs(unsigned long decimal, int i, int j)
+int	ft_hexsmall(unsigned long decimal, int i, int j)
 {
 	unsigned long	result;
 	unsigned long	rest;
@@ -40,7 +40,7 @@ int	ft_dexs(unsigned long decimal, int i, int j)
 	return (j);
 }
 
-int	ft_dex(unsigned long decimal, int i, int j)
+int	ft_hexcaps(unsigned long decimal, int i, int j)
 {
 	unsigned long	result;
 	unsigned long	rest;
@@ -75,6 +75,6 @@ int	ft_pointer(unsigned long ptr)
 	if (!ptr)
 		return (ft_putstr("(nil)"));
 	result = ft_putstr("0x");
-	result += ft_dexs(ptr, 0, 0);
+	result += ft_hexsmall(ptr, 0, 0);
 	return (result);
 }
